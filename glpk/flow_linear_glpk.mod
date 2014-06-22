@@ -9,7 +9,7 @@ minimize lop: sum{u in 0..2, v in 0..2} ( (sum{i in 0..2} (x[u,i]*i)) - (sum{j i
 /*s.t. xvk{i in 0..2}:*/
         /*sum{j in 0..2} x[i,j] = 1;*/
 
-s.t. xvk{i in 0..2, j in 0..2: x[i] != 0}:
+s.t. xvk{i in 0..2, j in 0..2: x[i,j] != 0}:
         x[i,j] = (if x[i] = j then 1 else 0);
 
 solve;
